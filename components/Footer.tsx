@@ -41,9 +41,9 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-gray-300">
+    <footer className="bg-primary-dark text-blue-100">
       <div className="mx-auto max-w-container px-4 py-16 md:px-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
@@ -51,10 +51,10 @@ export function Footer() {
                 PM
               </div>
               <span className="text-lg font-bold text-white">
-                Property<span className="text-primary">Manager</span>
+                Property<span className="text-blue-300">Manager</span>
               </span>
             </div>
-            <p className="mt-4 max-w-sm text-sm text-gray-400">
+            <p className="mt-4 max-w-sm text-sm text-blue-200/80">
               Administradora profissional de aluguel por temporada. Seu imóvel rendendo até 30% mais, sem você
               levantar um dedo.
             </p>
@@ -63,7 +63,7 @@ export function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-gray-300 transition hover:bg-primary hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-blue-100 transition hover:bg-white hover:text-primary"
                 >
                   <Icon size={18} />
                 </a>
@@ -77,7 +77,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="text-sm text-gray-400 transition hover:text-primary">
+                    <a href={l.href} className="text-sm text-blue-200/80 transition hover:text-white">
                       {l.label}
                     </a>
                   </li>
@@ -87,7 +87,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-sm text-blue-200/70 md:flex-row">
           <p>© {new Date().getFullYear()} PropertyManager. Todos os direitos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary">Privacidade</a>

@@ -1,18 +1,26 @@
+import Image from 'next/image'
 import { Star, Users, BedDouble } from 'lucide-react'
-import { type Imovel, gradiente } from '@/lib/imoveis'
+import { type Imovel } from '@/lib/imoveis'
 
 function brl(v: number) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
 }
 
-export function PropertyCard({ imovel }: { imovel: Imovel }) {
+export function PropertyCard({ imovel, priority = false }: { imovel: Imovel; priority?: boolean }) {
   return (
     <a
       href={`/estadias/${imovel.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
-      <div className={`relative flex h-48 items-center justify-center bg-gradient-to-br ${gradiente(imovel.bairro)}`}>
-        <span className="text-6xl drop-shadow-lg transition group-hover:scale-110">{imovel.cover}</span>
+      <div className="relative h-48 overflow-hidden">
+        <Image
+          src={imovel.foto}
+          alt={imovel.nome}
+          fill
+          priority={priority}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
         <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ink">
           {imovel.tipo}
         </span>

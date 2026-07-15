@@ -4,7 +4,8 @@ import { ArrowLeft, Star, Users, BedDouble, Bath, MapPin, Check } from 'lucide-r
 import { GuestHeader } from '@/components/estadias/GuestHeader'
 import { Footer } from '@/components/Footer'
 import { BookingWidget } from '@/components/estadias/BookingWidget'
-import { IMOVEIS, getImovel, gradiente } from '@/lib/imoveis'
+import Image from 'next/image'
+import { IMOVEIS, getImovel } from '@/lib/imoveis'
 
 export function generateStaticParams() {
   return IMOVEIS.map((i) => ({ slug: i.slug }))
@@ -30,18 +31,29 @@ export default function ImovelDetalhe({ params }: { params: { slug: string } }) 
           </a>
         </div>
 
-        {/* galeria (placeholder gradiente) */}
+        {/* galeria */}
         <div className="mx-auto max-w-container px-4 md:px-6">
           <div className="grid gap-3 md:grid-cols-4 md:grid-rows-2">
-            <div className={`flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br md:col-span-2 md:row-span-2 md:h-full ${gradiente(imovel.bairro)}`}>
-              <span className="text-8xl drop-shadow-lg">{imovel.cover}</span>
+            <div className="relative h-64 overflow-hidden rounded-2xl md:col-span-2 md:row-span-2 md:h-full">
+              <Image
+                src={imovel.foto}
+                alt={imovel.nome}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
             {[0, 1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className={`hidden h-full min-h-[120px] items-center justify-center rounded-2xl bg-gradient-to-br opacity-80 md:flex ${gradiente(imovel.bairro)}`}
-              >
-                <span className="text-3xl opacity-70">{imovel.cover}</span>
+              <div key={n} className="relative hidden h-full min-h-[120px] overflow-hidden rounded-2xl md:block">
+                <Image
+                  src={imovel.foto}
+                  alt={imovel.nome}
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                  style={{ objectPosition: `${25 + n * 15}% ${30 + n * 12}%`, transform: 'scale(1.15)' }}
+                />
               </div>
             ))}
           </div>

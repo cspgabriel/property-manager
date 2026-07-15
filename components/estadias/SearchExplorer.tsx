@@ -82,8 +82,8 @@ export function SearchExplorer({ bairroInicial = '' }: { bairroInicial?: string 
       </p>
 
       <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {lista.map((imovel) => (
-          <PropertyCard key={imovel.slug} imovel={imovel} />
+        {lista.map((imovel, idx) => (
+          <PropertyCard key={imovel.slug} imovel={imovel} priority={idx < 3} />
         ))}
       </div>
 

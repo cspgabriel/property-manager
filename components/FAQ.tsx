@@ -15,10 +15,10 @@ const ITEMS = [
 function Item({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="border-b border-gray-100">
+    <div className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
       >
         <span className="font-semibold text-ink">{q}</span>
         <ChevronDown
@@ -26,19 +26,19 @@ function Item({ q, a }: { q: string; a: string }) {
           className={`shrink-0 text-primary transition-transform ${open ? 'rotate-180' : ''}`}
         />
       </button>
-      {open && <p className="pb-5 text-gray-600">{a}</p>}
+      {open && <p className="px-5 pb-5 text-gray-600">{a}</p>}
     </div>
   )
 }
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-white py-16 md:py-24">
+    <section id="faq" className="bg-primary-light py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 md:px-6">
         <h2 className="text-center text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
           Perguntas frequentes
         </h2>
-        <div className="mt-10">
+        <div className="mt-10 space-y-3">
           {ITEMS.map((it) => (
             <Item key={it.q} {...it} />
           ))}

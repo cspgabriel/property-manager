@@ -10,8 +10,8 @@ export type Imovel = {
   preco: number // diária em R$
   nota: number
   avaliacoes: number
-  /** emoji/gradiente de capa (placeholder sem imagem externa) */
-  cover: string
+  /** caminho da foto (public/) */
+  foto: string
   descricao: string
   comodidades: string[]
   destaque?: boolean
@@ -44,7 +44,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 890,
     nota: 4.97,
     avaliacoes: 214,
-    cover: '🌊',
+    foto: '/imoveis/cobertura-copacabana.png',
     descricao:
       'Cobertura ampla a uma quadra da praia, com terraço privativo, vista panorâmica para o mar e pôr do sol. Ideal para famílias e grupos que querem conforto no coração de Copacabana.',
     comodidades: ['Wi-Fi 500MB', 'Ar-condicionado', 'Cozinha completa', 'Terraço', 'Vista mar', 'Elevador'],
@@ -62,7 +62,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 520,
     nota: 4.92,
     avaliacoes: 156,
-    cover: '✨',
+    foto: '/imoveis/studio-ipanema.png',
     descricao:
       'Studio recém-reformado a 300m da praia de Ipanema, decoração contemporânea e tudo que um casal precisa para uma estadia perfeita perto de bares e restaurantes.',
     comodidades: ['Wi-Fi 300MB', 'Ar-condicionado', 'Cozinha americana', 'Smart TV', 'Portaria 24h'],
@@ -80,7 +80,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 1150,
     nota: 4.99,
     avaliacoes: 189,
-    cover: '💎',
+    foto: '/imoveis/apartamento-leblon.png',
     descricao:
       'Apartamento sofisticado no bairro mais nobre do Rio, com acabamento premium, a poucos passos da praia do Leblon e das melhores compras da cidade.',
     comodidades: ['Wi-Fi 1GB', 'Ar-condicionado', 'Cozinha gourmet', 'Academia', 'Piscina', 'Vaga garagem'],
@@ -98,7 +98,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 410,
     nota: 4.88,
     avaliacoes: 97,
-    cover: '🏙️',
+    foto: '/imoveis/loft-botafogo.png',
     descricao:
       'Loft descolado com vista para o Pão de Açúcar, próximo ao metrô e à vida noturna de Botafogo. Perfeito para quem quer explorar a cidade.',
     comodidades: ['Wi-Fi 300MB', 'Ar-condicionado', 'Cozinha equipada', 'Metrô a 400m', 'Vista Pão de Açúcar'],
@@ -115,7 +115,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 640,
     nota: 4.9,
     avaliacoes: 132,
-    cover: '🏖️',
+    foto: '/imoveis/flat-barra.png',
     descricao:
       'Flat espaçoso em condomínio com piscina e lazer completo, de frente para a praia da Barra. Ótimo para famílias que buscam tranquilidade e estrutura.',
     comodidades: ['Wi-Fi 400MB', 'Ar-condicionado', 'Cozinha completa', 'Piscina', 'Playground', 'Vaga garagem'],
@@ -132,7 +132,7 @@ export const IMOVEIS: Imovel[] = [
     preco: 480,
     nota: 4.85,
     avaliacoes: 78,
-    cover: '🌳',
+    foto: '/imoveis/apartamento-flamengo.png',
     descricao:
       'Apartamento confortável de frente para o Aterro do Flamengo, com fácil acesso ao Centro e à Zona Sul. Ambiente familiar e bem localizado.',
     comodidades: ['Wi-Fi 300MB', 'Ar-condicionado', 'Cozinha equipada', 'Vista aterro', 'Metrô a 600m'],
