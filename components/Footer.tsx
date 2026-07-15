@@ -1,9 +1,33 @@
 import { Instagram, Facebook, Mail, Phone } from 'lucide-react'
 
 const COLUMNS = [
-  { title: 'Serviços', links: ['Gestão de Airbnb', 'Precificação dinâmica', 'Limpeza e manutenção', 'Anúncios profissionais'] },
-  { title: 'Cidades', links: ['Rio de Janeiro', 'São Paulo', 'Brasília', 'Salvador'] },
-  { title: 'Empresa', links: ['Sobre nós', 'Como funciona', 'Depoimentos', 'Contato'] },
+  {
+    title: 'Serviços',
+    links: [
+      { label: 'Anúncios profissionais', href: '/servicos/anuncios' },
+      { label: 'Precificação dinâmica', href: '/servicos/precificacao' },
+      { label: 'Limpeza e manutenção', href: '/servicos/limpeza' },
+      { label: 'Motor de reservas', href: '/motor' },
+    ],
+  },
+  {
+    title: 'Cidades',
+    links: [
+      { label: 'Rio de Janeiro', href: '/#hero-estimator' },
+      { label: 'São Paulo', href: '/#hero-estimator' },
+      { label: 'Brasília', href: '/#hero-estimator' },
+      { label: 'Salvador', href: '/#hero-estimator' },
+    ],
+  },
+  {
+    title: 'Empresa',
+    links: [
+      { label: 'Todos os serviços', href: '/servicos' },
+      { label: 'Como funciona', href: '/#hero-estimator' },
+      { label: 'Depoimentos', href: '/#faq' },
+      { label: 'Dúvidas', href: '/#faq' },
+    ],
+  },
 ]
 
 export function Footer() {
@@ -43,9 +67,9 @@ export function Footer() {
               <h4 className="text-sm font-semibold uppercase tracking-wide text-white">{col.title}</h4>
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-gray-400 transition hover:text-primary">
-                      {l}
+                  <li key={l.label}>
+                    <a href={l.href} className="text-sm text-gray-400 transition hover:text-primary">
+                      {l.label}
                     </a>
                   </li>
                 ))}

@@ -1,4 +1,5 @@
 import { Zap, Megaphone, Headphones, PartyPopper, Wrench, FileBarChart } from 'lucide-react'
+import { Reveal } from './ui/Reveal'
 
 const ADV = [
   { icon: Zap, title: 'Precificação inteligente', body: 'Sistema exclusivo que considera eventos, temporada e demanda local em tempo real.' },
@@ -11,23 +12,25 @@ const ADV = [
 
 export function Advantages() {
   return (
-    <section id="vantagens" className="bg-white py-16 md:py-24">
+    <section id="vantagens" className="bg-primary-light py-16 md:py-24">
       <div className="mx-auto max-w-container px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
             Vantagens da PropertyManager no Rio
           </h2>
           <p className="mt-3 text-gray-600">Tecnologia e expertise local para maximizar sua receita.</p>
-        </div>
+        </Reveal>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ADV.map((a) => (
-            <div key={a.title} className="rounded-2xl border border-gray-100 p-7 transition hover:border-primary hover:shadow-lg">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
-                <a.icon size={20} />
-              </span>
-              <h3 className="mt-4 text-lg font-bold text-ink">{a.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{a.body}</p>
-            </div>
+          {ADV.map((a, i) => (
+            <Reveal key={a.title} delay={(i % 3) * 100}>
+              <div className="h-full rounded-2xl border border-white bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-primary">
+                  <a.icon size={20} />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-ink">{a.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{a.body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

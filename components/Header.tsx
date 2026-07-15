@@ -22,16 +22,19 @@ export function Header() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#hero-estimator" className="text-sm font-medium text-gray-700 hover:text-primary">
+          <a href="/#hero-estimator" className="text-sm font-medium text-gray-700 hover:text-primary">
             Simular renda
           </a>
-          <a href="#servicos" className="text-sm font-medium text-gray-700 hover:text-primary">
+          <a href="/servicos" className="text-sm font-medium text-gray-700 hover:text-primary">
             Serviços
           </a>
-          <a href="#vantagens" className="text-sm font-medium text-gray-700 hover:text-primary">
+          <a href="/motor" className="text-sm font-medium text-gray-700 hover:text-primary">
+            Motor de reservas
+          </a>
+          <a href="/#vantagens" className="text-sm font-medium text-gray-700 hover:text-primary">
             Vantagens
           </a>
-          <a href="#faq" className="text-sm font-medium text-gray-700 hover:text-primary">
+          <a href="/#faq" className="text-sm font-medium text-gray-700 hover:text-primary">
             Dúvidas
           </a>
         </div>
@@ -55,16 +58,19 @@ export function Header() {
 
       {open && (
         <div className="space-y-1 border-t border-gray-100 px-4 py-3 md:hidden">
-          <a href="#hero-estimator" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
+          <a href="/#hero-estimator" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
             Simular renda
           </a>
-          <a href="#servicos" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
+          <a href="/servicos" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
             Serviços
           </a>
-          <a href="#vantagens" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
+          <a href="/motor" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
+            Motor de reservas
+          </a>
+          <a href="/#vantagens" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
             Vantagens
           </a>
-          <a href="#faq" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
+          <a href="/#faq" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
             Dúvidas
           </a>
           <a href={WHATSAPP} className="mt-2 block rounded-lg bg-primary px-3 py-2.5 text-center font-semibold text-white">

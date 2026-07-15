@@ -1,4 +1,6 @@
 import { Star, Camera, TrendingUp, Sparkles, Send } from 'lucide-react'
+import { CountUp } from './ui/CountUp'
+import { Reveal } from './ui/Reveal'
 
 const FEATURES = [
   { icon: Camera, label: 'Anúncio e fotos profissionais' },
@@ -11,7 +13,7 @@ const TRUST = ['Taxa única de 16%', 'Sem fidelidade', 'Resposta em até 5 min',
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-light via-blue-50 to-white">
       <div className="mx-auto grid max-w-container items-center gap-12 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
         {/* Left: copy */}
         <div>
@@ -67,16 +69,20 @@ export function Hero() {
         </div>
 
         {/* Right: proof stats card */}
-        <div className="relative">
+        <Reveal from="scale" delay={150} className="relative">
           <div className="rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-100">
             <p className="text-sm font-semibold uppercase tracking-wide text-gray-400">Nossos números</p>
             <div className="mt-6 grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-3xl font-extrabold text-primary">92%</div>
+                <div className="text-3xl font-extrabold text-primary">
+                  <CountUp to={92} suffix="%" />
+                </div>
                 <div className="mt-1 text-xs text-gray-500">ocupação média</div>
               </div>
               <div>
-                <div className="text-3xl font-extrabold text-primary">13+</div>
+                <div className="text-3xl font-extrabold text-primary">
+                  <CountUp to={13} suffix="+" />
+                </div>
                 <div className="mt-1 text-xs text-gray-500">cidades atendidas</div>
               </div>
               <div>
@@ -92,7 +98,7 @@ export function Hero() {
               <p className="mt-3 text-xs font-semibold text-gray-600">— Marcelo Santos, Copacabana, RJ</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

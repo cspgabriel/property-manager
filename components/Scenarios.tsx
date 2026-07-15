@@ -1,3 +1,5 @@
+import { Reveal } from './ui/Reveal'
+
 const SCEN = [
   {
     tag: '2 quartos · Leblon',
@@ -27,18 +29,18 @@ export function Scenarios() {
   return (
     <section className="bg-gray-50 py-16 md:py-24">
       <div className="mx-auto max-w-container px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">Cenários típicos no Rio</h2>
           <p className="mt-3 text-gray-600">Exemplos ilustrativos baseados em faixas observadas no mercado.</p>
-        </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {SCEN.map((s) => (
-            <div
-              key={s.tag}
-              className={`rounded-2xl p-7 ring-1 ${
-                s.highlight ? 'bg-primary text-white ring-primary' : 'bg-white text-ink ring-gray-100'
-              }`}
-            >
+        </Reveal>
+        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          {SCEN.map((s, i) => (
+            <Reveal key={s.tag} delay={i * 120} className="h-full">
+              <div
+                className={`h-full rounded-2xl p-7 ring-1 transition duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                  s.highlight ? 'bg-primary text-white ring-primary' : 'bg-white text-ink ring-gray-100'
+                }`}
+              >
               <p className={`text-sm font-semibold ${s.highlight ? 'text-white/80' : 'text-primary'}`}>{s.tag}</p>
               <dl className="mt-5 space-y-3">
                 {[
@@ -53,7 +55,8 @@ export function Scenarios() {
                   </div>
                 ))}
               </dl>
-            </div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
