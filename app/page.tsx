@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header'
+import { PortalSwitch } from '@/components/PortalSwitch'
 import { Hero } from '@/components/Hero'
 import { PartnerLogos } from '@/components/PartnerLogos'
 import { HeroEstimator } from '@/components/HeroEstimator'
@@ -19,6 +20,7 @@ import { Footer } from '@/components/Footer'
 export default function Home() {
   return (
     <>
+      <PortalSwitch />
       <Header />
       <main>
         <Hero />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { ComparisonResult } from './ui/ComparisonResult'
 
 const BAIRROS: Record<string, number> = {
   Copacabana: 380,
@@ -72,18 +73,9 @@ export function HeroEstimator() {
             ))}
           </div>
 
-          {/* Output */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <div className="rounded-xl bg-gray-50 p-5 text-center">
-              <p className="text-xs font-medium uppercase tracking-wide text-gray-400">Por conta própria</p>
-              <p className="mt-2 text-2xl font-bold text-gray-500">{brl(proprio)}</p>
-              <p className="text-xs text-gray-400">/mês</p>
-            </div>
-            <div className="rounded-xl bg-primary-light p-5 text-center ring-2 ring-primary">
-              <p className="text-xs font-medium uppercase tracking-wide text-primary">Com a PropertyManager</p>
-              <p className="mt-2 text-2xl font-extrabold text-primary">{brl(comPM)}</p>
-              <p className="text-xs text-primary">/mês</p>
-            </div>
+          {/* Output: 2 colunas desktop / slider mobile */}
+          <div className="mt-8">
+            <ComparisonResult proprio={proprio} comPM={comPM} />
           </div>
 
           <p className="mt-4 rounded-lg bg-success/10 px-4 py-3 text-center text-sm font-semibold text-success">

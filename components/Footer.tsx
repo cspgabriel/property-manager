@@ -7,7 +7,16 @@ const COLUMNS = [
       { label: 'Anúncios profissionais', href: '/servicos/anuncios' },
       { label: 'Precificação dinâmica', href: '/servicos/precificacao' },
       { label: 'Limpeza e manutenção', href: '/servicos/limpeza' },
-      { label: 'Motor de reservas', href: '/motor' },
+      { label: 'Calculadora de renda', href: '/calculadora' },
+    ],
+  },
+  {
+    title: 'Hóspedes',
+    links: [
+      { label: 'Reservar estadia', href: '/estadias' },
+      { label: 'Copacabana', href: '/estadias?bairro=Copacabana' },
+      { label: 'Ipanema', href: '/estadias?bairro=Ipanema' },
+      { label: 'Leblon', href: '/estadias?bairro=Leblon' },
     ],
   },
   {

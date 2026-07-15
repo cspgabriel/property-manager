@@ -39,8 +39,8 @@ export function Services() {
           <a href="/servicos" className="rounded-lg bg-primary px-7 py-3.5 text-center font-semibold text-white transition hover:bg-primary-dark">
             Ver todos os serviços em detalhe
           </a>
-          <a href="/motor" className="rounded-lg border-2 border-primary px-7 py-3.5 text-center font-semibold text-primary transition hover:bg-primary hover:text-white">
-            Conhecer o motor de reservas →
+          <a href="/calculadora" className="rounded-lg border-2 border-primary px-7 py-3.5 text-center font-semibold text-primary transition hover:bg-primary hover:text-white">
+            Calcular a renda do meu imóvel →
           </a>
         </Reveal>
       </div>
