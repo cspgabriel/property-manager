@@ -22,17 +22,17 @@ const COLUMNS = [
   {
     title: 'Cidades',
     links: [
-      { label: 'Rio de Janeiro', href: '/#hero-estimator' },
-      { label: 'São Paulo', href: '/#hero-estimator' },
-      { label: 'Brasília', href: '/#hero-estimator' },
-      { label: 'Salvador', href: '/#hero-estimator' },
+      { label: 'Rio de Janeiro', href: '/#calculadora' },
+      { label: 'São Paulo', href: '/#calculadora' },
+      { label: 'Brasília', href: '/#calculadora' },
+      { label: 'Salvador', href: '/#calculadora' },
     ],
   },
   {
     title: 'Empresa',
     links: [
       { label: 'Todos os serviços', href: '/servicos' },
-      { label: 'Como funciona', href: '/#hero-estimator' },
+      { label: 'Como funciona', href: '/#calculadora' },
       { label: 'Depoimentos', href: '/#faq' },
       { label: 'Dúvidas', href: '/#faq' },
     ],

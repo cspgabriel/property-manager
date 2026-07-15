@@ -2,8 +2,7 @@ import { Header } from '@/components/Header'
 import { PortalSwitch } from '@/components/PortalSwitch'
 import { Hero } from '@/components/Hero'
 import { PartnerLogos } from '@/components/PartnerLogos'
-import { HeroEstimator } from '@/components/HeroEstimator'
-import { RentalCalculator } from '@/components/RentalCalculator'
+import { Calculator } from '@/components/Calculator'
 import { ValueProps } from '@/components/ValueProps'
 import { MarketResults } from '@/components/MarketResults'
 import { Testimonials } from '@/components/Testimonials'
@@ -25,8 +24,7 @@ export default function Home() {
       <main>
         <Hero />
         <PartnerLogos />
-        <HeroEstimator />
-        <RentalCalculator />
+        <Calculator />
         <ValueProps />
         <MarketResults />
         <Testimonials />

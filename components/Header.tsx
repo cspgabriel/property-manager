@@ -7,7 +7,7 @@ const WHATSAPP =
   'https://wa.me/5521999999999?text=Ol%C3%A1!%20Vim%20do%20site%20PropertyManager%20e%20quero%20saber%20mais%20sobre%20gest%C3%A3o%20de%20Airbnb.'
 
 const LINKS = [
-  { href: '/#hero-estimator', label: 'Simular renda' },
+  { href: '/#calculadora', label: 'Simular renda' },
   { href: '/servicos', label: 'Serviços' },
   { href: '/calculadora', label: 'Calculadora' },
   { href: '/#vantagens', label: 'Vantagens' },

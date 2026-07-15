@@ -13,7 +13,7 @@ export function FinalCTA() {
         </p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <a
-            href="#hero-estimator"
+            href="#calculadora"
             className="rounded-lg bg-white px-8 py-4 font-bold text-primary transition hover:bg-gray-100"
           >
             Simular minha renda

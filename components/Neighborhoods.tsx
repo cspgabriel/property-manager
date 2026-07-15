@@ -21,7 +21,7 @@ export function Neighborhoods() {
           {BAIRROS.map((b, i) => (
             <Reveal key={b} delay={i * 40} from="scale">
               <a
-                href="#hero-estimator"
+                href="#calculadora"
                 className="flex items-center gap-2 rounded-xl bg-white px-4 py-3.5 text-sm font-medium text-gray-700 ring-1 ring-gray-100 transition hover:-translate-y-0.5 hover:text-primary hover:shadow-md hover:ring-primary"
               >
                 <MapPin size={16} className="text-primary" />

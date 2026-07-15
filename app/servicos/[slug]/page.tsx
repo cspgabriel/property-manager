@@ -43,7 +43,7 @@ export default function ServicoDetalhe({ params }: { params: { slug: string } })
               <h1 className="mt-5 text-4xl font-extrabold tracking-tight md:text-5xl">{servico.title}</h1>
               <p className="mt-4 text-lg text-white/90">{servico.hero}</p>
               <a
-                href="/#hero-estimator"
+                href="/#calculadora"
                 className="mt-8 inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary transition hover:bg-gray-100"
               >
                 Simular minha renda

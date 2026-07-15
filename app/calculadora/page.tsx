@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { HeroEstimator } from '@/components/HeroEstimator'
-import { RentalCalculator } from '@/components/RentalCalculator'
+import { Calculator } from '@/components/Calculator'
 import { Reveal } from '@/components/ui/Reveal'
 import { Zap, FileText, ShieldCheck } from 'lucide-react'
 
@@ -40,25 +39,7 @@ export default function CalculadoraPage() {
           </div>
         </section>
 
-        {/* Modo rápido */}
-        <div className="bg-gray-50 pt-4">
-          <div className="mx-auto max-w-container px-4 pt-10 md:px-6">
-            <Reveal className="text-center">
-              <span className="text-sm font-bold uppercase tracking-wide text-primary">Modo rápido</span>
-            </Reveal>
-          </div>
-        </div>
-        <HeroEstimator />
-
-        {/* Modo detalhado */}
-        <div className="bg-white pt-4">
-          <div className="mx-auto max-w-container px-4 pt-10 md:px-6">
-            <Reveal className="text-center">
-              <span className="text-sm font-bold uppercase tracking-wide text-primary">Modo detalhado</span>
-            </Reveal>
-          </div>
-        </div>
-        <RentalCalculator />
+        <Calculator />
 
         {/* Como funciona */}
         <section className="bg-primary-light py-16 md:py-24">

@@ -21,7 +21,7 @@ export function MidCTA() {
             ))}
           </div>
           <a
-            href="#hero-estimator"
+            href="#calculadora"
             className="mt-9 inline-block rounded-lg bg-white px-8 py-4 font-bold text-primary transition hover:bg-gray-100"
           >
             Quero aumentar minha receita

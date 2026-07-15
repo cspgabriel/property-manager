@@ -57,12 +57,12 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#hero-estimator"
+              href="#calculadora"
               className="rounded-lg bg-primary px-8 py-4 text-center font-semibold text-white shadow-lg shadow-primary/20 transition hover:bg-primary-dark"
             >
               Falar com um especialista
             </a>
-            <a href="#hero-estimator" className="text-center text-sm font-medium text-primary hover:underline">
+            <a href="#calculadora" className="text-center text-sm font-medium text-primary hover:underline">
               ou simule sua renda em 10 segundos →
             </a>
           </div>

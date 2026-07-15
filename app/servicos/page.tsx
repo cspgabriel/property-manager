@@ -60,7 +60,7 @@ export default function ServicosPage() {
               </h2>
               <p className="mt-4 text-lg text-gray-600">Sem fidelidade, sem taxa de adesão. Você só paga quando o imóvel rende.</p>
               <a
-                href="/#hero-estimator"
+                href="/#calculadora"
                 className="mt-8 inline-block rounded-lg bg-primary px-8 py-4 font-bold text-white transition hover:bg-primary-dark"
               >
                 Simular minha renda
