@@ -2,18 +2,21 @@
 
 import { useState } from 'react'
 import { Star, Check, Minus, Plus } from 'lucide-react'
+import { inserir } from '@/lib/supabase'
 
 function brl(v: number) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
 }
 
 export function BookingWidget({
+  slug,
   preco,
   nota,
   avaliacoes,
   maxHospedes,
   nome,
 }: {
+  slug: string
   preco: number
   nota: number
   avaliacoes: number
@@ -23,7 +26,11 @@ export function BookingWidget({
   const [checkin, setCheckin] = useState('')
   const [checkout, setCheckout] = useState('')
   const [hospedes, setHospedes] = useState(2)
+  const [nomeHospede, setNomeHospede] = useState('')
+  const [email, setEmail] = useState('')
+  const [telefone, setTelefone] = useState('')
   const [enviado, setEnviado] = useState(false)
+  const [enviando, setEnviando] = useState(false)
 
   // calcula noites
   const noites =
@@ -110,6 +117,31 @@ export function BookingWidget({
             </div>
           </div>
 
+          <div className="mt-3 space-y-2">
+            <input
+              value={nomeHospede}
+              onChange={(e) => setNomeHospede(e.target.value)}
+              placeholder="Seu nome"
+              className="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
+            />
+            <div className="grid grid-cols-2 gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-mail"
+                className="rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
+              />
+              <input
+                type="tel"
+                value={telefone}
+                onChange={(e) => setTelefone(e.target.value)}
+                placeholder="WhatsApp"
+                className="rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
+              />
+            </div>
+          </div>
+
           {noites > 0 && (
             <dl className="mt-4 space-y-2 border-t border-gray-100 pt-4 text-sm">
               <div className="flex justify-between">
@@ -134,11 +166,28 @@ export function BookingWidget({
           )}
 
           <button
-            onClick={() => noites > 0 && setEnviado(true)}
-            disabled={noites <= 0}
+            onClick={async () => {
+              if (noites <= 0 || enviando) return
+              setEnviando(true)
+              await inserir('pm_reservas', {
+                imovel_slug: slug,
+                imovel_nome: nome,
+                checkin,
+                checkout,
+                noites,
+                hospedes,
+                total,
+                hospede_nome: nomeHospede || null,
+                hospede_email: email || null,
+                hospede_telefone: telefone || null,
+              })
+              setEnviando(false)
+              setEnviado(true)
+            }}
+            disabled={noites <= 0 || enviando}
             className="mt-5 w-full rounded-lg bg-primary px-6 py-3.5 font-semibold text-white transition hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {noites > 0 ? 'Solicitar reserva' : 'Escolha as datas'}
+            {enviando ? 'Enviando...' : noites > 0 ? 'Solicitar reserva' : 'Escolha as datas'}
           </button>
           <p className="mt-3 text-center text-xs text-gray-400">Você ainda não será cobrado.</p>
         </>

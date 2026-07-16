@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Minus, Plus, MapPin, Zap, FileText, TrendingUp, BarChart3, CalendarDays } from 'lucide-react'
 import { ComparisonResult } from './ui/ComparisonResult'
+import { inserir } from '@/lib/supabase'
 
 function brl(v: number) {
   return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
@@ -182,7 +183,16 @@ export function Calculator() {
               </div>
 
               <button
-                onClick={() => setCalculado(true)}
+                onClick={() => {
+                  setCalculado(true)
+                  void inserir('pm_leads', {
+                    bairro: dBairro || null,
+                    quartos: String(dQuartos),
+                    modo: 'detalhado',
+                    receita_estimada: receitaMensal,
+                    origem: 'calculadora-endereco',
+                  })
+                }}
                 className="mt-8 w-full rounded-lg bg-primary px-6 py-3.5 font-semibold text-white transition hover:bg-primary-dark"
               >
                 Calcular receita

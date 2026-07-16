@@ -118,6 +118,7 @@ export default function ImovelDetalhe({ params }: { params: { slug: string } }) 
             {/* widget sticky */}
             <aside className="lg:sticky lg:top-24 lg:self-start">
               <BookingWidget
+                slug={imovel.slug}
                 preco={imovel.preco}
                 nota={imovel.nota}
                 avaliacoes={imovel.avaliacoes}
